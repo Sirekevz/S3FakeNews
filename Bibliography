@@ -2,5 +2,8 @@
 Golbeck J., Mauriello M., et al. Fake News vs Satire: A Dataset and Analysis (2018)
 http://web.stanford.edu/~mattm401/docs/2018-Golbeck-WebSci-FakeNewsVsSatire.pdf
 
-
+Article describing text classification using word2vec models, where each word is represented by vector in a large vector space.
+Those vectors hold some interesting properties (words with similiar semanting meaning are represented by vectors which are close to each other),
+this allows for classification of texts based on, e.g., average distance of vectors in an article etc...
+http://nadbordrozd.github.io/blog/2016/05/20/text-classification-with-word2vec/
 
