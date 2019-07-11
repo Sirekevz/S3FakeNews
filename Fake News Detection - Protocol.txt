@@ -10,11 +10,14 @@ Assign level of "Fakeness"
 Decision: Detect fake news itself (the news/tweet etc) or the author of fake news?
 	GO FOR THE FAKE NEWS DETECTION BASED ON CONTENT
 	
-
-	
-	
 Possible Parameters/Identification/Differentiation methods:
-	Differences in the Word Count, Letter COunt, Specific words that appear more often than others?
-	Differences in the Topics itself? --> Are there more fake news for one specific topic than for others?
+	Differences in the Word Count, Letter Count, Specific words/word combinations that appear more often than others?
+	Informations about the authors? --> how many articles/posts/tweets did they write? with which topics? and are some authors more likely to produce fake news than others?
+	Differences in the Topics itself? --> Are there more fake news for one specific topic than for others? e.g. climate change, politics, money etc
 	What about satire? how to detect that?
-	
+
+	Hybrid approach:
+		first label the text according to its topics and then use these topics additionally to other features for the actual fake news classification
+		Labelling the text with topics: done via an extra classifier that can be trained on already labelled article datasets, e.g. 
+			Reuters news dataset: probably one the most widely used dataset for text classification, it contains 21,578 news articles from Reuters labeled with 135 categories according to their topic, such as Politics, Economics, Sports, and Business. http://kdd.ics.uci.edu/databases/reuters21578/reuters21578.html
+			20 Newsgroups: another popular dataset that consists of ~20,000 documents across 20 different topics. http://qwone.com/~jason/20Newsgroups/
