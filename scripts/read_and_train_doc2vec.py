@@ -5,7 +5,7 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 from nltk.tokenize import word_tokenize
 
 # load the data
-dataset = pd.read_csv("data/train.csv")
+dataset = pd.read_csv("../data/train.csv")
 
 # #### PLOT NUMBER OF ARTICLES AND AUTHORS ####
 # sizes = []
