@@ -16,5 +16,5 @@ Decision: Detect fake news itself (the news/tweet etc) or the author of fake new
 Possible Parameters/Identification/Differentiation methods:
 	Differences in the Word Count, Letter COunt, Specific words that appear more often than others?
 	Differences in the Topics itself? --> Are there more fake news for one specific topic than for others?
-	What about satire? how to detect that?
+	What about satire? how to detect that? --> it is somehow possible (http://web.stanford.edu/~mattm401/docs/2018-Golbeck-WebSci-FakeNewsVsSatire.pdf)
 	
