@@ -1,0 +1,13 @@
+Fake News Detection:
+
+focus on text, maybe also short text like tweets
+
+Remark from Mark: Fakenews are better classified when looking on how they spread instead of the content itself
+Lucia: with graph search/theory: build up a graph of the "way" of news
+
+Assign level of "Fakeness"
+
+Decision: Detect fake news itself (the news/tweet etc) or the author of fake news?
+	GO FOR THE FAKE NEWS DETECTION BASED ON CONTENT
+	
+Possible Datasets:
