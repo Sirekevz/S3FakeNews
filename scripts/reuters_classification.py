@@ -20,9 +20,10 @@ from sklearn.multiclass import OneVsRestClassifier
 import time
 from sklearn.svm import LinearSVC
 from sklearn.metrics import accuracy_score, fbeta_score
+import warnings
 
 
-def main(dataset_module):
+def main_overall_classification_test(dataset_module):
     """
     Train a classifier for a dataset.
     Parameters
@@ -45,9 +46,9 @@ def main(dataset_module):
         ('Random Forest (200 estimators)',
          RandomForestClassifier(n_estimators=200, n_jobs=10)),
         ('Logistic Regression (C=1)',
-         OneVsRestClassifier(LogisticRegression(C=1))),
+         OneVsRestClassifier(LogisticRegression(C=1, solver='saga'))),
         ('Logistic Regression (C=1000)',
-         OneVsRestClassifier(LogisticRegression(C=10000))),
+         OneVsRestClassifier(LogisticRegression(C=10000, solver='saga'))),
         ('k nn 3', KNeighborsClassifier(3)),
         ('k nn 5', KNeighborsClassifier(5)),
         ('Naive Bayes', OneVsRestClassifier(GaussianNB())),
@@ -72,6 +73,9 @@ def main(dataset_module):
         #  Pipeline(steps=[('rbm', BernoulliRBM(n_components=512, n_iter=10)),
         #                  ('logistic', LogisticRegression(C=1))])),
     ]
+
+
+    warnings.filterwarnings('ignore')
 
     print(("{clf_name:<30}: {score:<5}  in {train_time:>5} /  {test_time}")
           .format(clf_name="Classifier",
@@ -102,4 +106,5 @@ def main(dataset_module):
                       test_time=t2 - t1))
         # print("\tAccuracy={}\tF1={}".format(acc, f1))
 
-main(reuters_data_loading)
+
+main_overall_classification_test(reuters_data_loading)
