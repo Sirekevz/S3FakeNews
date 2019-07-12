@@ -1,4 +1,2 @@
 *.csv
 __pycache__
-model1
-model_size_100
