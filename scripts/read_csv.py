@@ -60,18 +60,21 @@ def return_dataset():
 	cnt_0 = Counter(data_0)
 	cnt_1 = Counter(data_1)
 
-	words_to_be_removed = []
+	words_to_be_removed = set()
 
 	print("Loop in all unique words, to select words to be deleted.")
 	for unique_word in tqdm(Counter(data_0 + data_1)):
-
+		if cnt_0[unique_word] + cnt_1[unique_word] == 1:
+			for row in data:
+				if unique_word in row:
+					row.remove(unique_word)
+					break
+				
 		if cnt_0[unique_word] + cnt_1[unique_word] < 10:
-				words_to_be_removed.append(unique_word)
+				words_to_be_removed.add(unique_word)
 		elif  0.45 < ((cnt_0[unique_word] / len(data_0)) / 
 		((cnt_0[unique_word] / len(data_0))  + (cnt_1[unique_word] / len(data_1)))) < 0.55:
-			print(((cnt_0[unique_word] / len(data_0)) / 
-		((cnt_0[unique_word] / len(data_0))  + (cnt_1[unique_word] / len(data_1)))))
-			words_to_be_removed.append(unique_word)
+			words_to_be_removed.add(unique_word)
 
 	print("remove selected words")
 	for row in tqdm(data):
@@ -84,7 +87,7 @@ def return_dataset():
 
 
 
-data = return_dataset()
+
 
 
 
