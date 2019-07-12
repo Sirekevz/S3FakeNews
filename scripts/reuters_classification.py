@@ -54,24 +54,7 @@ def main_overall_classification_test(dataset_module):
         ('Naive Bayes', OneVsRestClassifier(GaussianNB())),
         ('SVM, linear', OneVsRestClassifier(SVC(kernel="linear",
                                                 C=0.025,
-                                                cache_size=200))),
-        ('SVM, adj.', OneVsRestClassifier(SVC(probability=False,
-                                              kernel="rbf",
-                                              C=2.8,
-                                              gamma=.0073,
-                                              cache_size=200))),
-        ('AdaBoost', OneVsRestClassifier(AdaBoostClassifier())),  # 20 minutes to train
-        ('LDA', OneVsRestClassifier(LinearDiscriminantAnalysis())),  # took more than 6 hours
-        ('RBM 100', Pipeline(steps=[('rbm', BernoulliRBM(n_components=100)),
-                                    ('logistic', LogisticRegression(C=1))])),
-        # ('RBM 100, n_iter=20',
-        #  Pipeline(steps=[('rbm', BernoulliRBM(n_components=100, n_iter=20)),
-        #                  ('logistic', LogisticRegression(C=1))])),
-        # ('RBM 256', Pipeline(steps=[('rbm', BernoulliRBM(n_components=256)),
-        #                             ('logistic', LogisticRegression(C=1))])),
-        # ('RBM 512, n_iter=100',
-        #  Pipeline(steps=[('rbm', BernoulliRBM(n_components=512, n_iter=10)),
-        #                  ('logistic', LogisticRegression(C=1))])),
+                                                cache_size=200)))
     ]
 
 

@@ -28,7 +28,7 @@ xs = {'train': data['x_train'], 'test': data['x_test']}
 ys = {'train': data['y_train'], 'test': data['y_test']}
 
 C_vals=[1,10,100,1000]
-C_vals.extend(list([3**n for n in range(-5,5)]))
+#C_vals.extend(list([3**n for n in range(-5,5)]))
 
 parameters_to_tune = {'estimator__C':C_vals, 'estimator__multi_class':['ovr','crammer_singer']}
 classifier=GridSearchCV(OneVsRestClassifier(LinearSVC(max_iter=2000)), parameters_to_tune, cv=10, scoring='accuracy')
