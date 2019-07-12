@@ -20,10 +20,11 @@ from gensim.test.utils import get_tmpfile
 class doc2vec_converter_object:
 
 	def __init__(self):
+		print("loading model")
 		self._model = Doc2Vec.load("model_size_100")
 
 	def transform_from_list_of_words_to_real_vec(self, list_of_words):
-		return model.infer_vector(list_of_words)
+		return _model.infer_vector(list_of_words)
 
 ########################################
 

@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
+from tqdm import tqdm
+
 
 
 def return_dataset():
@@ -27,7 +29,8 @@ def return_dataset():
 	# Remove \n and trailing spaces. Get rid of missing values.
 	i = 0
 	places_with_nan = []
-	for row in dataset:
+	print("Removing nans")
+	for row in tqdm(dataset):
 		if str(row[0]).strip()=="nan" or isinstance(row[0], float):
 			places_with_nan.append(i)
 			i += 1
@@ -38,7 +41,8 @@ def return_dataset():
 	dataset = np.delete(dataset, places_with_nan, axis=0)
 	
 	new_data  = []
-	for line in dataset:
+	print("Removing non letters")
+	for line in tqdm(dataset):
 		text = line[0]
 		text = ''.join(ch.lower() for ch in text if ch.isalpha() or ch == " ")
 		new_data.append([[word for word in text.split(" ") if len(word)>1],line[-1]])
