@@ -32,3 +32,4 @@ MILESTONES
 6- prepare the 10-12 slides presentation (can be done in parallel with the rest) 
 
 7- 15h30: beginning of presentations :-)
+	Link for Presentation: https://drive.google.com/open?id=1YV_lnckakVah1ebjQ_PUth9tNfcKvEjx5JXwBT29kbU
