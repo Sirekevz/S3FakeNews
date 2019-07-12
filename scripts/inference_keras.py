@@ -20,7 +20,7 @@ print("class", dataset[index][1])
 ## Model ##
 
 model = Sequential()
-model.add(Dense(units=7, activation='tanh', input_dim=10))
+model.add(Dense(units=5, activation='tanh', input_dim=10))
 model.add(Dense(units=5, activation='tanh'))
 model.add(Dense(units=3, activation='tanh'))
 model.add(Dense(units=1, activation='sigmoid'))
@@ -41,7 +41,7 @@ y_train = np.array([dataset[index][1] for index in range(int(N*train_perc))])
 
 
 
-model.fit(x_train, y_train, epochs=15, batch_size=32)
+model.fit(x_train, y_train, epochs=20, batch_size=32)
 
 
 print("generating test set")
